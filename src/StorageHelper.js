@@ -69,7 +69,7 @@ export default class StorageHelper {
    */
   constructor() {
     try {
-      this.storageWindow = window.localStorage;
+      this.storageWindow = window.sessionStorage;
       this.storageWindow.setItem('aws.cognito.test-ls', 1);
       this.storageWindow.removeItem('aws.cognito.test-ls');
     } catch (exception) {
