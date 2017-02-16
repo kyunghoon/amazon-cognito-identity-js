@@ -44,6 +44,19 @@ declare module "amazon-cognito-identity-js" {
 
         public signOut(): void;
         public globalSignOut(callbacks: {onSuccess: (msg: string) => void, onFailure: (err: Error) => void}): void;
+
+        public updateAttributes(attr: (CognitoUserAttribute | { Name: string, Value: string })[], callback: (err: any, result: string) => void): void;
+        public verifyAttribute(attributeName: string, confirmationCode: string, callback: {
+            onFailure: (err: any) => void,
+            onSuccess: (res: string) => void
+        }): void;
+        public getUserAttributes(callback: (err: any, result: CognitoUserAttribute[]) => void): void;
+        public deleteUser(callback: (err: any, result: string) => void): void;
+        public enableMFA(callback: (err: any, result: string) => void): void;
+        public getAttributeVerificationCode(attributeName: string, callback: {
+            onFailure: (err: any) => void,
+            inputVerificationCode: (data: any) => void
+        }): void;
     }
 
     export interface ICognitoUserAttribute {
