@@ -42,7 +42,7 @@
   "main": "dist/amazon-cognito-identity.min.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "aws-sdk": "^2.6.0",
+    "aws-sdk": "2.177.0",
     "jsbn": "^0.1.0"
   },
   "devDependencies": {
@@ -55,5 +55,8 @@
     "eslint-plugin-import": "^1.13.0",
     "jsdoc": "^3.4.0",
     "webpack": "^1.13.1"
+  },
+  "peerDependencies": {
+    "aws-sdk": "2.177.0"
   }
 }
